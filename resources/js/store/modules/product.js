@@ -38,7 +38,8 @@ const actions = {
         await axios
             .get(path.baseUrl + "product")
             .then(response => {
-                commit("setAllProduct", response.data);
+                console.log(response.data.products);
+                commit("setProducts", response.data.products);
             })
             .catch(error => console.log(error));
     },
